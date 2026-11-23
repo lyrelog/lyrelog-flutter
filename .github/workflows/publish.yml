@@ -31,7 +31,8 @@ jobs:
           channel: stable
           flutter-version: 3.50.0
       - name: The tag is the package's version
-        run: test "${GITHUB_REF_NAME#v}" = "$(sed -n 's/^version: //p' pubspec.yaml)"
+        run: |
+          test "${GITHUB_REF_NAME#v}" = "$(sed -n 's/^version: //p' pubspec.yaml)"
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
