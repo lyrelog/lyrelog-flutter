@@ -46,7 +46,7 @@ struct RunnerTests {
       captureNativeCrashes: true, attachScreen: true, attest: true, mirrorToConsole: false,
       pauseUploadsInLowPowerMode: true)
     let configuration = message.configuration
-    #expect(configuration?.wrapper == "lyrelog-flutter/0.9.0")
+    #expect(configuration?.wrapper == "lyrelog-flutter/1.0.0")
     #expect(configuration?.consent == .pending)
     #expect(configuration?.minimumLevel == Lyrelog.LogLevel.warning)
   }

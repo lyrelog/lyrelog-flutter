@@ -1,7 +1,7 @@
 // The Android half of the lyrelog Flutter plugin: a thin layer over the Lyrelog Android SDK,
 // com.lyrelog:lyrelog-android, from Maven Central.
 group = "com.lyrelog.flutter"
-version = "0.9.0"
+version = "1.0.0"
 
 buildscript {
     val kotlinVersion = "2.4.20"
@@ -54,7 +54,7 @@ kotlin {
 }
 
 dependencies {
-    implementation("com.lyrelog:lyrelog-android:0.9.0")
+    implementation("com.lyrelog:lyrelog-android:1.0.0")
     // Pigeon's generated code runs the asynchronous calls (flush, stop) as coroutines.
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.11.0")
 }

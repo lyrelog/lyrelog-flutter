@@ -1,3 +1,10 @@
+## 1.0.0
+
+- Version 1.0.0, over the Swift and Android SDKs 1.0.0 (`resource.sdk` is
+  `lyrelog-flutter/1.0.0 lyrelog-swift/1.0.0` or `... lyrelog-android/1.0.0`). The Dart API is
+  the same as 0.9.0.
+- `lyrelog_ios` 1.0.0, over the Swift SDK from 1.0.0 up to (not including) 2.0.0.
+
 ## 0.9.0
 
 - Version 0.9.0, over the Swift and Android SDKs 0.9.0 (`resource.sdk` is

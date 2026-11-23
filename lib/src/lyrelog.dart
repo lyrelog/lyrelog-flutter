@@ -29,8 +29,8 @@ import 'values.dart';
 /// are kept and applied when it runs.
 abstract final class Lyrelog {
   /// This package's version, named in `resource.sdk` before the native SDK's
-  /// (`lyrelog-flutter/0.9.0 lyrelog-swift/0.9.0`).
-  static const String version = '0.9.0';
+  /// (`lyrelog-flutter/1.0.0 lyrelog-swift/1.0.0`).
+  static const String version = '1.0.0';
 
   static LyrelogHostApi _api = LyrelogHostApi();
   static bool _started = false;

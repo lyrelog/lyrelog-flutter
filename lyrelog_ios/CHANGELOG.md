@@ -1,3 +1,8 @@
+## 1.0.0
+
+- The iOS side of `lyrelog` 1.0.0, over the Lyrelog Swift SDK from 1.0.0 up to (not including)
+  2.0.0. Nothing else changed since 0.9.0.
+
 ## 0.9.0
 
 - The iOS side of `lyrelog` 0.9.0, over the Lyrelog Swift SDK 0.9.0 (`@_spi(Wrapper) import
