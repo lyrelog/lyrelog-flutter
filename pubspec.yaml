@@ -1,0 +1,45 @@
+name: lyrelog
+description: Structured logs from your Flutter app to Lyrelog, a hosted log service. A thin Dart layer over the native Lyrelog SDKs for iOS and Android.
+version: 0.9.0
+homepage: https://lyrelog.com
+repository: https://github.com/lyrelog/lyrelog-flutter
+issue_tracker: https://github.com/lyrelog/lyrelog-flutter/issues
+documentation: https://docs.lyrelog.com/sdks/flutter
+topics:
+  - logging
+  - monitoring
+  - crash-reporting
+environment:
+  # The oldest that works, checked with Flutter 3.44.0 (Dart 3.12): it is the first whose Swift
+  # package plugins get the FlutterFramework package Package.swift depends on.
+  sdk: ^3.12.0
+  flutter: ">=3.44.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Pigeon's generated Dart imports it; Flutter pins the version, so this adds nothing. 1.18.0
+  # is the one Flutter 3.44 pins.
+  meta: ^1.18.0
+  # The iOS implementation lives in its own package: Flutter names a plugin's Swift module after
+  # the package, and a module `lyrelog` next to the Swift SDK's `Lyrelog` collides on a
+  # case-insensitive disk. Published on its own, first; pubspec_overrides.yaml points at the
+  # folder while working here.
+  lyrelog_ios: ^0.9.0
+
+dev_dependencies:
+  # SHA-256 for the test that public files name no real person.
+  crypto: ^3.0.8
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  pigeon: ^30.0.4
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.lyrelog.flutter
+        pluginClass: LyrelogPlugin
+      ios:
+        default_package: lyrelog_ios

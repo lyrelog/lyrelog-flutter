@@ -1,0 +1,21 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    # Pigeon's output (regenerated, never edited).
+    - lib/src/*.g.dart
+    - android/**
+    - ios/**
+    - web/**
+    - windows/**
+    - macos/**
+    - linux/**
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
+
+linter:
+  rules:
+    # Everything an app can call shows on pub.dev: each needs its dartdoc.
+    - public_member_api_docs

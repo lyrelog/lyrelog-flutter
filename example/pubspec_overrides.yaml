@@ -1,0 +1,5 @@
+# lyrelog_ios from its folder in this repo, as the plugin itself does (left out of the published
+# package by .pubignore).
+dependency_overrides:
+  lyrelog_ios:
+    path: ../lyrelog_ios

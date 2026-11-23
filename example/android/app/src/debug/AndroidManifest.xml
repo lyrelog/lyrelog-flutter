@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- The INTERNET permission is required for development. Specifically,
+         the Flutter tool needs it to communicate with the running application
+         to allow setting breakpoints, to provide hot reload, etc.
+    -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Debug only: Android 17 needs it to reach a local Lyrelog stack at 10.0.2.2 (your computer). -->
+    <uses-permission android:name="android.permission.ACCESS_LOCAL_NETWORK"/>
+
+    <!-- Debug only: plain http to 10.0.2.2, and nothing else. -->
+    <application android:networkSecurityConfig="@xml/network_security_config"/>
+</manifest>

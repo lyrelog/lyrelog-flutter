@@ -1,0 +1,45 @@
+# What `dart pub publish` leaves out of the lyrelog package. A .pubignore replaces this
+# folder's .gitignore for pub, so it repeats it first.
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+# Libraries should not include pubspec.lock, per https://dart.dev/guides/libraries/private-files#pubspeclock.
+/pubspec.lock
+**/doc/api/
+.dart_tool/
+.flutter-plugins-dependencies
+/build/
+/coverage/
+
+# The iOS implementation is a package of its own (lyrelog_ios), published from its folder.
+/lyrelog_ios/
+
+# The guide for agents working in this repo, not for apps.
+/CLAUDE.md
+
+# Working against the lyrelog_ios folder, not the published package.
+/pubspec_overrides.yaml
+/example/pubspec_overrides.yaml

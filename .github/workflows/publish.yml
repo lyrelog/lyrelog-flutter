@@ -1,0 +1,46 @@
+# A v* tag publishes lyrelog_ios and then lyrelog to pub.dev, after the tests and the analyzer.
+# The tag must match pubspec.yaml's version.
+#
+# No token: pub.dev trusts this repository's tags (each package's Admin page, "Automated
+# publishing", tag pattern v{{version}}, environment "pub.dev"); setup-dart exchanges GitHub's
+# OIDC token for pub's. lyrelog_ios goes first, from a copy outside the repository: the root
+# .pubignore leaves its folder out of the lyrelog package, and pub would apply that to it too.
+# The first versions were published by hand (a package must exist before it can trust a
+# workflow).
+name: publish
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment: pub.dev
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: dart-lang/setup-dart@2286a0c042b44434fe26d292bbce8d34f7ec662b # v1.8.2
+      - uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2.23.0
+        with:
+          channel: stable
+          flutter-version: 3.50.0
+      - name: The tag is the package's version
+        run: test "${GITHUB_REF_NAME#v}" = "$(sed -n 's/^version: //p' pubspec.yaml)"
+      - run: flutter pub get
+      - run: flutter analyze
+      - run: flutter test
+      - name: Publish lyrelog_ios
+        run: |
+          copy="$RUNNER_TEMP/lyrelog_ios"
+          cp -R lyrelog_ios "$copy"
+          cd "$copy" && flutter pub publish --force
+      - name: Publish lyrelog
+        run: |
+          rm pubspec_overrides.yaml example/pubspec_overrides.yaml
+          flutter pub publish --force

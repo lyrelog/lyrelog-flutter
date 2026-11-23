@@ -1,0 +1,5 @@
+# While working in this repo, lyrelog_ios comes from its folder, not from pub.dev (left out of
+# the published package by .pubignore).
+dependency_overrides:
+  lyrelog_ios:
+    path: lyrelog_ios
