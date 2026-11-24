@@ -13,7 +13,7 @@
   <a href="https://lyrelog.com">lyrelog.com</a>
 </p>
 
-Structured logs from your Flutter app to [Lyrelog](https://lyrelog.com), a hosted log service.
+Structured logs from your Flutter app to [Lyrelog](https://lyrelog.com/platforms/flutter), a hosted log service.
 iOS 16 and Android 7.0 (API 24) and later, Flutter 3.44 (Dart 3.12) or newer. A thin Dart layer over the native Lyrelog SDKs (Swift
 on iOS, Kotlin on Android), so the disk queue, native crash capture, the background flush,
 sessions, consent and verified events are theirs. Dart errors nobody caught are reported too.
