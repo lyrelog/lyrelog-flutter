@@ -1,3 +1,10 @@
+## 1.0.2
+
+- Over the Android SDK 1.1.0: ANRs and native (C/C++) crashes, the Flutter engine's included, are
+  reported on the next launch from Android's own records (Android 11+; a native crash's frames
+  from Android 12). The Dart API is unchanged.
+- `lyrelog_ios` 1.0.2: no change but its version, in step.
+
 ## 1.0.1
 
 - Over the Swift SDK 1.1.1: iOS crashes are caught in the app's own process the moment they

@@ -24,7 +24,7 @@ From pub.dev:
 
 ```yaml
 dependencies:
-  lyrelog: ^1.0.1
+  lyrelog: ^1.0.2
 ```
 
 ### iOS
@@ -121,8 +121,8 @@ runZonedGuarded(() => runApp(const MyApp()), (error, stack) {
 **Native crashes** come from the native SDKs (`captureNativeCrashes`, on by default) and are
 sent on the next launch, at the time they happened, as `app_crashed` (critical, area
 `diagnostics`): on iOS crashes caught in the app's own process (and hangs from MetricKit), on
-Android uncaught JVM exceptions.
-Android's native (C/C++) crashes and ANRs aren't reported.
+Android uncaught JVM exceptions, and ANRs and native crashes from Android's own records
+(Android 11+).
 
 Release builds with `--obfuscate` have obfuscated type names and frames: keep the symbols
 (`--split-debug-info`) and run `flutter symbolize` on the frames.
@@ -154,7 +154,7 @@ Everything below is the native SDK's own behaviour, the same as in a Swift or Ko
 | Monthly quota | A `429` with `plan` waits for its `Retry-After` but isn't counted as a failed attempt (the backoff doesn't grow), plus one warning in the unified log. | The same, the warning in logcat. |
 | Network down | After 3 failed uploads in a row, one warning in the unified log, then nothing until an upload goes through. | The same, in logcat. |
 | Consent | `pending` keeps events on the device, `granted` sends them, `denied` deletes everything queued and the install id. Nothing is uploaded unless consent is granted. | Same. |
-| Context | App id, version, build, OS, device model, locale, environment, platform `ios`, `sdk` `lyrelog-flutter/1.0.1 lyrelog-swift/1.1.1`, a session id (new after 30 min idle) and an install id. | The same with platform `android` and `sdk` `lyrelog-flutter/1.0.1 lyrelog-android/1.0.0`. |
+| Context | App id, version, build, OS, device model, locale, environment, platform `ios`, `sdk` `lyrelog-flutter/1.0.2 lyrelog-swift/1.1.1`, a session id (new after 30 min idle) and an install id. | The same with platform `android` and `sdk` `lyrelog-flutter/1.0.2 lyrelog-android/1.1.0`. |
 | Redacts secrets | Any field in `attrs` or `payload` whose name, lowercased and without `-`, `_`, `.` or spaces, is or ends with `authorization`, `cookie`, `password`, `passwd`, `secret`, `token`, `apikey`, `privatekey`, `credential(s)`, `accesskey` or `signature` is sent as `"[redacted]"`, before anything is cut. Only names are checked, never a message or an error's text. | Same. |
 | Limits | Long strings cut on a character boundary, extra attributes counted in `lyrelog_dropped_attrs`, payloads over 64 KiB summarised. | Same. |
 
