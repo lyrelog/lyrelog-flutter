@@ -105,7 +105,7 @@ internal fun StartMessage.toConfiguration(): Configuration {
 }
 
 /** This package's version (pubspec.yaml), named in `resource.sdk` before the Android SDK's. */
-internal const val WRAPPER_VERSION = "1.0.3"
+internal const val WRAPPER_VERSION = "1.0.4"
 
 internal fun LevelMessage.toLevel() = when (this) {
     LevelMessage.TRACE -> Level.TRACE

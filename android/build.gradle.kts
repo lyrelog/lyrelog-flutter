@@ -1,7 +1,7 @@
 // The Android half of the lyrelog Flutter plugin: a thin layer over the Lyrelog Android SDK,
 // com.lyrelog:lyrelog-android, from Maven Central.
 group = "com.lyrelog.flutter"
-version = "1.0.3"
+version = "1.0.4"
 
 buildscript {
     val kotlinVersion = "2.4.20"

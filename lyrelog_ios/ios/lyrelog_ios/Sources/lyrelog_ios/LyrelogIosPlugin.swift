@@ -125,8 +125,8 @@ private final class Once: @unchecked Sendable {
 
 extension StartMessage {
     /// This package's name and version (pubspec.yaml), named in `resource.sdk` before the Swift
-    /// SDK's: `lyrelog-flutter/1.0.3 lyrelog-swift/1.1.1`.
-    static let wrapper = "lyrelog-flutter/1.0.3"
+    /// SDK's: `lyrelog-flutter/1.0.4 lyrelog-swift/1.1.1`.
+    static let wrapper = "lyrelog-flutter/1.0.4"
 
     /// The Swift SDK's configuration, or nil for an endpoint that isn't a URL (nothing starts:
     /// it must not fall back to another address).

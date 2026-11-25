@@ -1,3 +1,10 @@
+## 1.0.4
+
+- Readable release stacks: a build's Dart symbols (`--split-debug-info`) and obfuscation map,
+  uploaded with `lyrelog symbols upload`, turn its Dart frames and obfuscated types back into
+  your code on Lyrelog. The README says how. No change to the Dart API.
+- `lyrelog_ios` 1.0.4: no change but its version, in step.
+
 ## 1.0.3
 
 - Over the Android SDK 1.1.1: a native crash names the app's own libraries, so Lyrelog asks only
