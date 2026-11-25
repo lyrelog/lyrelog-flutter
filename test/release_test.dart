@@ -21,8 +21,8 @@ void main() {
   group('version', () {
     String version() => find('pubspec.yaml', RegExp(r'^version: (\S+)$', multiLine: true));
 
-    test('is 1.0.0', () {
-      expect(version(), '1.0.0');
+    test('is 1.0.1', () {
+      expect(version(), '1.0.1');
     });
 
     test('is the same in every place it lives', () {

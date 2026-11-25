@@ -1,3 +1,8 @@
+## 1.0.1
+
+- Over the Lyrelog Swift SDK from 1.1.1 (crashes caught in the app's own process, sent on the next
+  launch) up to (not including) 2.0.0.
+
 ## 1.0.0
 
 - The iOS side of `lyrelog` 1.0.0, over the Lyrelog Swift SDK from 1.0.0 up to (not including)

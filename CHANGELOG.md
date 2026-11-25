@@ -1,3 +1,11 @@
+## 1.0.1
+
+- Over the Swift SDK 1.1.1: iOS crashes are caught in the app's own process the moment they
+  happen and sent on the next launch, instead of waiting for MetricKit (which can take hours).
+  `resource.sdk` is `lyrelog-flutter/1.0.1 lyrelog-swift/1.1.1` (or `... lyrelog-android/1.0.0`).
+  The Dart API is unchanged.
+- `lyrelog_ios` 1.0.1, over the Swift SDK from 1.1.1 up to (not including) 2.0.0.
+
 ## 1.0.0
 
 - Version 1.0.0, over the Swift and Android SDKs 1.0.0 (`resource.sdk` is
