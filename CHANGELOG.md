@@ -1,3 +1,9 @@
+## 1.0.3
+
+- Over the Android SDK 1.1.1: a native crash names the app's own libraries, so Lyrelog asks only
+  for their symbols (`lyrelog symbols upload`), never Android's. The Dart API is unchanged.
+- `lyrelog_ios` 1.0.3: no change but its version, in step.
+
 ## 1.0.2
 
 - Over the Android SDK 1.1.0: ANRs and native (C/C++) crashes, the Flutter engine's included, are

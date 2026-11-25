@@ -1,6 +1,6 @@
 name: lyrelog_ios
 description: The iOS implementation of the lyrelog plugin, over the Lyrelog Swift SDK. Use the lyrelog package; this one comes with it.
-version: 1.0.2
+version: 1.0.3
 homepage: https://lyrelog.com
 repository: https://github.com/lyrelog/lyrelog-flutter
 issue_tracker: https://github.com/lyrelog/lyrelog-flutter/issues

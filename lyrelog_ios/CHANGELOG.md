@@ -1,3 +1,7 @@
+## 1.0.3
+
+- No change: released in step with `lyrelog` 1.0.3.
+
 ## 1.0.2
 
 - No change: released in step with `lyrelog` 1.0.2.
