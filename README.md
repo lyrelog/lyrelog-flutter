@@ -24,7 +24,7 @@ From pub.dev:
 
 ```yaml
 dependencies:
-  lyrelog: ^1.0.4
+  lyrelog: ^1.0.5
 ```
 
 ### iOS
@@ -125,14 +125,14 @@ Android uncaught JVM exceptions, and ANRs and native crashes from Android's own 
 (Android 11+).
 
 Release builds with `--split-debug-info` (and `--obfuscate`) print Dart stacks by address. Upload
-the folder that build wrote with the [command-line tool](https://docs.lyrelog.com/cli), with the
-`--save-obfuscation-map` file if you obfuscate, and Lyrelog shows each frame's function, file and
-line, and the error's real type:
+the folder that build wrote with the [command-line tool](https://docs.lyrelog.com/cli) (1.7.0 or
+later), with the `--save-obfuscation-map` file saved inside it if you obfuscate, and Lyrelog shows
+each frame's function, file and line, and the error's real type:
 
 ```bash
 flutter build apk --obfuscate --split-debug-info=build/debug-info \
-  --extra-gen-snapshot-options=--save-obfuscation-map=build/obfuscation.map.json
-lyrelog symbols upload build/debug-info build/obfuscation.map.json
+  --extra-gen-snapshot-options=--save-obfuscation-map=build/debug-info/obfuscation.map.json
+lyrelog symbols upload build/debug-info
 ```
 
 **Screens**: say where the person is and every event that follows carries it as `screen`
@@ -162,7 +162,7 @@ Everything below is the native SDK's own behaviour, the same as in a Swift or Ko
 | Monthly quota | A `429` with `plan` waits for its `Retry-After` but isn't counted as a failed attempt (the backoff doesn't grow), plus one warning in the unified log. | The same, the warning in logcat. |
 | Network down | After 3 failed uploads in a row, one warning in the unified log, then nothing until an upload goes through. | The same, in logcat. |
 | Consent | `pending` keeps events on the device, `granted` sends them, `denied` deletes everything queued and the install id. Nothing is uploaded unless consent is granted. | Same. |
-| Context | App id, version, build, OS, device model, locale, environment, platform `ios`, `sdk` `lyrelog-flutter/1.0.4 lyrelog-swift/1.1.1`, a session id (new after 30 min idle) and an install id. | The same with platform `android` and `sdk` `lyrelog-flutter/1.0.4 lyrelog-android/1.1.1`. |
+| Context | App id, version, build, OS, device model, locale, environment, platform `ios`, `sdk` `lyrelog-flutter/1.0.5 lyrelog-swift/1.1.2`, a session id (new after 30 min idle) and an install id. | The same with platform `android` and `sdk` `lyrelog-flutter/1.0.5 lyrelog-android/1.1.1`. |
 | Redacts secrets | Any field in `attrs` or `payload` whose name, lowercased and without `-`, `_`, `.` or spaces, is or ends with `authorization`, `cookie`, `password`, `passwd`, `secret`, `token`, `apikey`, `privatekey`, `credential(s)`, `accesskey` or `signature` is sent as `"[redacted]"`, before anything is cut. Only names are checked, never a message or an error's text. | Same. |
 | Limits | Long strings cut on a character boundary, extra attributes counted in `lyrelog_dropped_attrs`, payloads over 64 KiB summarised. | Same. |
 

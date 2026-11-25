@@ -1,3 +1,7 @@
+## 1.0.5
+
+- Over the Lyrelog Swift SDK from 1.1.2 (its crash reporter fixed).
+
 ## 1.0.4
 
 - No change: released in step with `lyrelog` 1.0.4.

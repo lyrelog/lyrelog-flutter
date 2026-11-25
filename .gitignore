@@ -35,3 +35,6 @@ migrate_working_dir/
 # Agents guide: kept on the maintainer's machine, not in the public repo
 CLAUDE.md
 /lyrelog_ios/pubspec.lock
+
+# Xcode resolves the Swift package here when it opens the example: not the repo's
+example/ios/**/xcshareddata/swiftpm/

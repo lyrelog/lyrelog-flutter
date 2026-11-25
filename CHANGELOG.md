@@ -1,3 +1,12 @@
+## 1.0.5
+
+- Over the Swift SDK 1.1.2, whose crash reporter is fixed: `start` after `stop`, crashes MetricKit
+  reports that it didn't catch, other crash reporters' handlers.
+- The README's upload command saves the obfuscation map inside the symbols' folder, which every
+  CLI from 1.7.0 reads.
+- The example app's Xcode project signs with no team: pick yours to run it on a device.
+- `lyrelog_ios` 1.0.5: over the Swift SDK 1.1.2.
+
 ## 1.0.4
 
 - Readable release stacks: a build's Dart symbols (`--split-debug-info`) and obfuscation map,

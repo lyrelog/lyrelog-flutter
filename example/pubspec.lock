@@ -134,14 +134,14 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "1.0.4"
+    version: "1.0.5"
   lyrelog_ios:
     dependency: "direct overridden"
     description:
       path: "../lyrelog_ios"
       relative: true
     source: path
-    version: "1.0.4"
+    version: "1.0.5"
   matcher:
     dependency: transitive
     description:
