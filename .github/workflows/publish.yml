@@ -36,12 +36,25 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter test
+      # Already on pub.dev (a run repeated after lyrelog failed): skipped, so the run can go on.
       - name: Publish lyrelog_ios
         run: |
+          version="$(sed -n 's/^version: //p' lyrelog_ios/pubspec.yaml)"
+          if curl -sf "https://pub.dev/api/packages/lyrelog_ios/versions/$version" > /dev/null; then
+            echo "lyrelog_ios $version is already on pub.dev"
+            exit 0
+          fi
           copy="$RUNNER_TEMP/lyrelog_ios"
           cp -R lyrelog_ios "$copy"
           cd "$copy" && flutter pub publish --force
+      # pub.dev takes a little while to resolve the lyrelog_ios just published (v1.0.1's run
+      # failed on it): try for up to five minutes.
       - name: Publish lyrelog
         run: |
           rm pubspec_overrides.yaml example/pubspec_overrides.yaml
+          for attempt in $(seq 1 10); do
+            flutter pub get && break
+            echo "lyrelog_ios isn't resolvable yet: waiting 30 s"
+            sleep 30
+          done
           flutter pub publish --force
